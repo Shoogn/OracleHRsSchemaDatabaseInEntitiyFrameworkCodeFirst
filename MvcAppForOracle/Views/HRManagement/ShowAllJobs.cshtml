@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MvcAppForOracle.Models.Job>
+@{
+    ViewBag.Title = "ShowAllJobs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowAllJobs</h2>
+<div>
+    <table class="table table-hover">
+        <tr class="card-header"><td>Job ID</td><td>Job Title</td><td>Max Salary</td><td>Min Salary</td></tr>
+        @foreach (var j in Model)
+        {
+
+
+            <tr>
+                <td>@j.JobID</td>
+                <td>@j.JobTitle</td>
+                <td>@j.MaxSalary.ToString("{0:3}")</td>
+                <td>@j.MinSalary</td>
+            </tr>
+
+        }
+    </table>
+    </div>
